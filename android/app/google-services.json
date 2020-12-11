@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "41055896003",
+    "firebase_url": "https://road-eyes.firebaseio.com",
+    "project_id": "road-eyes",
+    "storage_bucket": "road-eyes.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:41055896003:android:d04d095f8ac0a599e97d76",
+        "android_client_info": {
+          "package_name": "com.emyiashirou.project"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "41055896003-h164c1p9mnhmfb6hea6ptvc8gp2dugfv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyANM4c_gd-LAZxoII47KpObDxjKOFNhL_o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "41055896003-h164c1p9mnhmfb6hea6ptvc8gp2dugfv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
