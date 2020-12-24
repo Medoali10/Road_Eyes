@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'dart:async';
 import 'main.dart';
 
@@ -37,6 +38,8 @@ class _Home extends State<Home> with TickerProviderStateMixin {
   int counter = 0;
   dynamic fspeed;
 
+  final FirebaseMessaging _fcm = FirebaseMessaging();
+
   final DocumentReference dataDoc = Firestore.instance.document("data/DATA");
   fetch() {
     dataDoc.get().then((datasnapshot) {
@@ -49,7 +52,11 @@ class _Home extends State<Home> with TickerProviderStateMixin {
           persons = datasnapshot.data()["persons"];
           motoNum = datasnapshot.data()["motorbikes"];
           trucks = datasnapshot.data()["trucks"];
-          fspeed = speed / counter;
+          if (datasnapshot.data()["flow speed"] == 0) {
+            fspeed = 0;
+          } else {
+            fspeed = speed / counter;
+          }
         });
       }
     });
@@ -75,6 +82,45 @@ class _Home extends State<Home> with TickerProviderStateMixin {
       curve: Curves.easeInOutQuint,
     ));
     super.initState();
+    _fcm.configure(
+      onMessage: (Map<String, dynamic> message) async {
+        print("onMessage: $message");
+        // final snackbar = SnackBar(
+        //   content: Text(message['notification']['title']),
+        //   action: SnackBarAction(
+        //     label: 'Go',
+        //     onPressed: () => null,
+        //   ),
+        // );
+
+        // Scaffold.of(context).showSnackBar(snackbar);
+        showDialog(
+          context: context,
+          builder: (context) => AlertDialog(
+            content: ListTile(
+              title: Text(message['notification']['title']),
+              subtitle: Text(message['notification']['body']),
+            ),
+            actions: <Widget>[
+              FlatButton(
+                color: Colors.amber,
+                child: Text('Ok'),
+                onPressed: () => Navigator.of(context).pop(),
+              ),
+            ],
+          ),
+        );
+      },
+      onLaunch: (Map<String, dynamic> message) async {
+        print("onLaunch: $message");
+        // TODO optional
+      },
+      onResume: (Map<String, dynamic> message) async {
+        print("onResume: $message");
+        // TODO optional
+      },
+    );
+    _fcm.subscribeToTopic('puppies');
     Timer.periodic(Duration(seconds: 3), (timer) {
       fetch();
     });

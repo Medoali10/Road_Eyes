@@ -1,34 +1,42 @@
 {
   "project_info": {
-    "project_number": "41055896003",
-    "firebase_url": "https://road-eyes.firebaseio.com",
-    "project_id": "road-eyes",
-    "storage_bucket": "road-eyes.appspot.com"
+    "project_number": "989363926236",
+    "firebase_url": "https://road-eyes-f5dec-default-rtdb.firebaseio.com",
+    "project_id": "road-eyes-f5dec",
+    "storage_bucket": "road-eyes-f5dec.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:41055896003:android:d04d095f8ac0a599e97d76",
+        "mobilesdk_app_id": "1:989363926236:android:05db52e6fb9a1062f03019",
         "android_client_info": {
           "package_name": "com.emyiashirou.project"
         }
       },
       "oauth_client": [
         {
-          "client_id": "41055896003-h164c1p9mnhmfb6hea6ptvc8gp2dugfv.apps.googleusercontent.com",
+          "client_id": "989363926236-aocfrmrj116h336fs2osv5rkb25ojinh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.emyiashirou.project",
+            "certificate_hash": "4a68707bfd88234ad1e0af33c3107fa802d9c62a"
+          }
+        },
+        {
+          "client_id": "989363926236-c79n9jearo9dj064t1su85tuircn3s07.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyANM4c_gd-LAZxoII47KpObDxjKOFNhL_o"
+          "current_key": "AIzaSyBZbKG-VVVVrKwWt8V8LuvLXcFMYItxt6c"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "41055896003-h164c1p9mnhmfb6hea6ptvc8gp2dugfv.apps.googleusercontent.com",
+              "client_id": "989363926236-c79n9jearo9dj064t1su85tuircn3s07.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
